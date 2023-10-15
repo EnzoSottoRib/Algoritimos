@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main(){
+    
+    int altura, sexo, i, maioralt=0, menoralt=1000, mediaaltm=0, mediaaltt=0, alth=0, altm=0, qtdh=0,qtdm=0, qtdt=0, qtdnd=0;
+    float perch;
+    
+    for(i=0; i!=50; i++){
+        printf("Digite a altura: ");
+        scanf("%d", &altura);
+        if(altura > maioralt){
+            maioralt = altura;
+        } else if(altura < menoralt){
+            menoralt = altura;
+        }
+        
+        qtdt += 1;
+        mediaaltt += altura;
+        
+        printf("Digite o sexo: ");
+        scanf("%d", &sexo);
+        
+        switch(sexo){
+            case 0:
+                qtdh += 1;
+                break;
+            case 1: 
+                qtdm += 1;
+                mediaaltm += altura;
+                break;
+            case 2:
+                qtdnd += 1;
+                break;
+        }
+        
+    }
+    
+    
+    printf("Maior altura encontrada: %d\nMenor altura encontrada: %d", maioralt, menoralt);
+    
+    printf("\nA media de altura das mulheres é de: %d", mediaaltm/qtdm);
+    
+    printf("\nA media de altura da populaçao é de: %d", mediaaltt/qtdt);
+    
+    printf("\nO percentual de homens na população é de: %d%%", qtdh*100/qtdt);
+    
+    return 0;
+}
